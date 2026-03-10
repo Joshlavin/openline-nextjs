@@ -17,14 +17,14 @@ export default function Nav({ onOpenModal }: { onOpenModal: () => void }) {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[rgba(250,250,250,0.8)] backdrop-blur-xl shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
+          ? "bg-[rgba(250,250,250,0.85)] backdrop-blur-2xl shadow-[0_1px_3px_rgba(0,0,0,0.06)]"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-[var(--max)] mx-auto flex items-center justify-between px-6 h-16">
+      <div className="max-w-[var(--max)] mx-auto flex items-center justify-between px-6 lg:px-8 h-[72px]">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 no-underline">
-          <div className="w-[30px] h-[30px] bg-accent rounded-lg flex items-center justify-center">
+          <div className="w-[32px] h-[32px] bg-accent rounded-[10px] flex items-center justify-center">
             <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
               <path
                 d="M4.5 2.5C4.5 2.5 3.5 3 3.5 5.5C3.5 8 5.5 10.5 8 13C10.5 10.5 12.5 8 12.5 5.5C12.5 3 11.5 2.5 11.5 2.5"
@@ -48,29 +48,29 @@ export default function Nav({ onOpenModal }: { onOpenModal: () => void }) {
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-sm text-text-2 hover:text-text transition-colors">
+        <div className="hidden md:flex items-center gap-10">
+          <a href="#features" className="text-[14px] text-text-2 hover:text-text transition-colors no-underline">
             Features
           </a>
-          <a href="#pricing" className="text-sm text-text-2 hover:text-text transition-colors">
+          <a href="#pricing" className="text-[14px] text-text-2 hover:text-text transition-colors no-underline">
             Pricing
           </a>
-          <a href="#industries" className="text-sm text-text-2 hover:text-text transition-colors">
+          <a href="#industries" className="text-[14px] text-text-2 hover:text-text transition-colors no-underline">
             Industries
           </a>
           <a
             href="/blog-how-ai-answering-works.html"
-            className="text-sm text-text-2 hover:text-text transition-colors"
+            className="text-[14px] text-text-2 hover:text-text transition-colors no-underline"
           >
             Blog
           </a>
         </div>
 
         {/* CTA + Mobile Toggle */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <button
             onClick={onOpenModal}
-            className="hidden md:inline-flex h-9 px-5 items-center justify-center rounded-full bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-colors cursor-pointer border-none"
+            className="hidden md:inline-flex h-10 px-6 items-center justify-center rounded-full bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-colors cursor-pointer border-none"
           >
             Get a Demo
           </button>
@@ -93,16 +93,16 @@ export default function Nav({ onOpenModal }: { onOpenModal: () => void }) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[rgba(250,250,250,0.95)] backdrop-blur-xl border-t border-border overflow-hidden"
+            className="md:hidden bg-[rgba(250,250,250,0.97)] backdrop-blur-2xl border-t border-border overflow-hidden"
           >
-            <div className="flex flex-col gap-1 px-6 py-4">
-              <a href="#features" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm text-text-2 hover:text-text no-underline">Features</a>
-              <a href="#pricing" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm text-text-2 hover:text-text no-underline">Pricing</a>
-              <a href="#industries" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm text-text-2 hover:text-text no-underline">Industries</a>
-              <a href="/blog-how-ai-answering-works.html" onClick={() => setMobileOpen(false)} className="py-2.5 text-sm text-text-2 hover:text-text no-underline">Blog</a>
+            <div className="flex flex-col gap-1 px-6 py-5">
+              <a href="#features" onClick={() => setMobileOpen(false)} className="py-3 text-[15px] text-text-2 hover:text-text no-underline">Features</a>
+              <a href="#pricing" onClick={() => setMobileOpen(false)} className="py-3 text-[15px] text-text-2 hover:text-text no-underline">Pricing</a>
+              <a href="#industries" onClick={() => setMobileOpen(false)} className="py-3 text-[15px] text-text-2 hover:text-text no-underline">Industries</a>
+              <a href="/blog-how-ai-answering-works.html" onClick={() => setMobileOpen(false)} className="py-3 text-[15px] text-text-2 hover:text-text no-underline">Blog</a>
               <button
                 onClick={() => { setMobileOpen(false); onOpenModal(); }}
-                className="mt-2 h-10 rounded-full bg-accent text-white text-sm font-medium border-none cursor-pointer"
+                className="mt-3 h-11 rounded-full bg-accent text-white text-sm font-medium border-none cursor-pointer"
               >
                 Get a Demo
               </button>

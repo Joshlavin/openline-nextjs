@@ -14,21 +14,24 @@ const rows = [
 
 export default function Comparison() {
   return (
-    <section className="py-20 px-6">
+    <section className="py-24 lg:py-32 px-6">
       <div className="max-w-[var(--max)] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-30px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <h2
-            className="text-[clamp(1.8rem,3vw,2.6rem)] leading-tight text-text font-normal tracking-[-0.02em] mb-3"
+            className="text-[clamp(1.8rem,3vw,2.6rem)] leading-tight text-text font-normal tracking-[-0.02em] mb-4"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             How OpenLine compares
           </h2>
+          <p className="text-text-2 text-lg max-w-lg mx-auto">
+            The best of both worlds. AI intelligence with human warmth.
+          </p>
         </motion.div>
 
         <motion.div
@@ -42,23 +45,23 @@ export default function Comparison() {
             <table className="w-full text-left border-collapse min-w-[520px]">
               <thead>
                 <tr className="border-b border-border">
-                  <th className="px-6 py-4 text-sm font-medium text-text-3">Feature</th>
-                  <th className="px-6 py-4 text-sm font-semibold text-accent text-center">OpenLine</th>
-                  <th className="px-6 py-4 text-sm font-medium text-text-3 text-center">IVR / Phone Tree</th>
-                  <th className="px-6 py-4 text-sm font-medium text-text-3 text-center">Human Receptionist</th>
+                  <th className="px-7 py-5 text-sm font-medium text-text-3">Feature</th>
+                  <th className="px-7 py-5 text-sm font-semibold text-accent text-center">OpenLine</th>
+                  <th className="px-7 py-5 text-sm font-medium text-text-3 text-center">IVR / Phone Tree</th>
+                  <th className="px-7 py-5 text-sm font-medium text-text-3 text-center">Human Receptionist</th>
                 </tr>
               </thead>
               <tbody>
                 {rows.map((row, i) => (
                   <tr key={i} className="border-b border-border last:border-b-0">
-                    <td className="px-6 py-3.5 text-sm text-text">{row.feature}</td>
-                    <td className="px-6 py-3.5 text-center">
+                    <td className="px-7 py-4 text-sm text-text">{row.feature}</td>
+                    <td className="px-7 py-4 text-center">
                       <Check yes={row.openline} accent />
                     </td>
-                    <td className="px-6 py-3.5 text-center">
+                    <td className="px-7 py-4 text-center">
                       <Check yes={row.ivr} />
                     </td>
-                    <td className="px-6 py-3.5 text-center">
+                    <td className="px-7 py-4 text-center">
                       <Check yes={row.human} />
                     </td>
                   </tr>
@@ -75,7 +78,7 @@ export default function Comparison() {
 function Check({ yes, accent }: { yes: boolean; accent?: boolean }) {
   if (yes) {
     return (
-      <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-xs ${accent ? "bg-accent-soft text-accent" : "bg-green-soft text-green"}`}>
+      <span className={`inline-flex items-center justify-center w-7 h-7 rounded-full text-xs ${accent ? "bg-accent-soft text-accent" : "bg-green-soft text-green"}`}>
         ✓
       </span>
     );

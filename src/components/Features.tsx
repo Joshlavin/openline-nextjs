@@ -79,24 +79,27 @@ const fadeUp = {
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 px-6 bg-surface">
+    <section id="features" className="py-24 lg:py-32 px-6 bg-surface">
       <div className="max-w-[var(--max)] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-30px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
           <h2
-            className="text-[clamp(1.8rem,3vw,2.6rem)] leading-tight text-text font-normal tracking-[-0.02em] mb-3"
+            className="text-[clamp(1.8rem,3vw,2.6rem)] leading-tight text-text font-normal tracking-[-0.02em] mb-4"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             Everything a receptionist does.<br />None of the overhead.
           </h2>
+          <p className="text-text-2 text-lg">
+            From the first ring to the follow-up text, OpenLine handles it all.
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f, i) => (
             <motion.div
               key={i}
@@ -105,12 +108,12 @@ export default function Features() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-30px" }}
-              className="bg-bg rounded-2xl border border-border p-7 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-shadow"
+              className="bg-bg rounded-2xl border border-border p-8 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-shadow"
             >
-              <div className="w-10 h-10 rounded-xl bg-accent-soft text-accent flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-accent-soft text-accent flex items-center justify-center mb-5">
                 {f.icon}
               </div>
-              <h3 className="text-[15px] font-semibold text-text mb-2">{f.title}</h3>
+              <h3 className="text-[15px] font-semibold text-text mb-2.5">{f.title}</h3>
               <p className="text-sm text-text-2 leading-relaxed">{f.desc}</p>
             </motion.div>
           ))}

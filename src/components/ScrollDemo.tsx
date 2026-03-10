@@ -65,10 +65,10 @@ export default function ScrollDemo() {
         {/* Background gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,85,255,0.06)_0%,transparent_60%)]" />
 
-        <div className="max-w-[var(--max)] mx-auto h-full flex items-center px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 w-full items-center">
+        <div className="max-w-[var(--max)] mx-auto h-full flex items-center px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 w-full items-center">
             {/* Left — Steps */}
-            <div className="relative min-h-[220px]">
+            <div className="relative min-h-[240px]">
               {steps.map((step, i) => (
                 <div
                   key={i}
@@ -79,11 +79,11 @@ export default function ScrollDemo() {
                   } ${i === 0 || i === activeStep ? "" : "absolute inset-0"}`}
                   style={i !== activeStep ? { position: "absolute", top: 0, left: 0 } : {}}
                 >
-                  <div className="text-accent text-xs font-semibold tracking-[0.15em] uppercase mb-3">
+                  <div className="text-accent text-xs font-semibold tracking-[0.15em] uppercase mb-4">
                     Step {step.num}
                   </div>
                   <h2
-                    className="text-[clamp(1.8rem,3vw,2.4rem)] leading-[1.15] text-white mb-4 font-normal tracking-[-0.02em]"
+                    className="text-[clamp(1.8rem,3vw,2.4rem)] leading-[1.15] text-white mb-5 font-normal tracking-[-0.02em]"
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
                     {step.title}
@@ -103,12 +103,12 @@ export default function ScrollDemo() {
         </div>
 
         {/* Progress dots */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-2">
+        <div className="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-2.5">
           {[0, 1, 2, 3].map((i) => (
             <div
               key={i}
               className={`h-2 rounded-full transition-all duration-300 ${
-                i === activeStep ? "w-5 bg-accent" : "w-2 bg-[#333]"
+                i === activeStep ? "w-6 bg-accent" : "w-2 bg-[#333]"
               }`}
             />
           ))}
