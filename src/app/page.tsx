@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <>
       <Nav onOpenModal={openModal} />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero onOpenModal={openModal} />
         <LogoBar />
         <ScrollDemo />

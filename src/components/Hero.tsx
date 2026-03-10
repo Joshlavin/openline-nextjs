@@ -13,7 +13,7 @@ const fadeUp = {
 
 export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
   return (
-    <section className="pt-36 pb-24 px-6 lg:pt-44 lg:pb-32">
+    <section className="pt-36 pb-24 px-6 lg:pt-44 lg:pb-32 overflow-hidden">
       <div className="max-w-[var(--max)] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         {/* Left */}
         <div>
