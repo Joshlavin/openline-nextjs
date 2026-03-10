@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const included = [
   "AI voice agent, fully customized to your business",
   "24/7 call answering",
@@ -17,12 +15,7 @@ export default function Pricing({ onOpenModal }: { onOpenModal: () => void }) {
     <section id="pricing" className="py-24 lg:py-32 px-6">
       <div className="max-w-[var(--max)] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-30px" }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <h2
               className="text-[clamp(1.8rem,3vw,2.6rem)] leading-tight text-text font-normal tracking-[-0.02em] mb-5"
               style={{ fontFamily: "var(--font-serif)" }}
@@ -38,15 +31,9 @@ export default function Pricing({ onOpenModal }: { onOpenModal: () => void }) {
             >
               Get Your Custom Quote
             </button>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-30px" }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="bg-surface rounded-2xl border border-border p-9"
-          >
+          <div className="bg-surface rounded-2xl border border-border p-9">
             <h3 className="text-base font-semibold text-text mb-6">What&apos;s Included</h3>
             <div className="flex flex-col gap-4">
               {included.map((item) => (
@@ -58,7 +45,7 @@ export default function Pricing({ onOpenModal }: { onOpenModal: () => void }) {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

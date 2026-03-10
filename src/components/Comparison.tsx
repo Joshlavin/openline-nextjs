@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const rows = [
   { feature: "24/7 availability", openline: true, ivr: true, human: false },
   { feature: "Natural conversation", openline: true, ivr: false, human: true },
@@ -16,13 +14,7 @@ export default function Comparison() {
   return (
     <section className="py-24 lg:py-32 px-6">
       <div className="max-w-[var(--max)] mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-30px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2
             className="text-[clamp(1.8rem,3vw,2.6rem)] leading-tight text-text font-normal tracking-[-0.02em] mb-4"
             style={{ fontFamily: "var(--font-serif)" }}
@@ -32,15 +24,9 @@ export default function Comparison() {
           <p className="text-text-2 text-lg max-w-lg mx-auto">
             The best of both worlds. AI intelligence with human warmth.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-30px" }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="bg-surface rounded-2xl border border-border overflow-hidden"
-        >
+        <div className="bg-surface rounded-2xl border border-border overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[520px]">
               <thead>
@@ -69,7 +55,7 @@ export default function Comparison() {
               </tbody>
             </table>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

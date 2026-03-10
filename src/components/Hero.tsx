@@ -1,62 +1,29 @@
 "use client";
 
-import { motion } from "framer-motion";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] as const },
-  }),
-};
-
 export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
   return (
     <section className="pt-36 pb-24 px-6 lg:pt-44 lg:pb-32 overflow-hidden">
       <div className="max-w-[var(--max)] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         {/* Left */}
         <div>
-          <motion.div
-            custom={0}
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="inline-flex items-center gap-2 h-8 px-3.5 rounded-full bg-accent-soft text-accent text-xs font-medium mb-8"
-          >
+          <div className="inline-flex items-center gap-2 h-8 px-3.5 rounded-full bg-accent-soft text-accent text-xs font-medium mb-8">
             <span className="w-2 h-2 rounded-full bg-accent animate-[pulse-ring_2s_infinite]" />
             AI-Powered Call Answering
-          </motion.div>
+          </div>
 
-          <motion.h1
-            custom={1}
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
+          <h1
             className="text-[clamp(2.4rem,5vw,3.6rem)] leading-[1.08] font-normal tracking-[-0.03em] text-text mb-6"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             Never miss another<br />call again.
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            custom={2}
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="text-lg leading-relaxed text-text-2 mb-10 max-w-md"
-          >
+          <p className="text-lg leading-relaxed text-text-2 mb-10 max-w-md">
             Your AI receptionist answers every call, qualifies leads, books appointments, and
             sends you a summary. 24/7.
-          </motion.p>
+          </p>
 
-          <motion.div
-            custom={3}
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-wrap gap-4"
-          >
+          <div className="flex flex-wrap gap-4">
             <button
               onClick={onOpenModal}
               className="h-13 px-8 rounded-full bg-accent text-white text-[15px] font-medium border-none cursor-pointer hover:bg-accent-hover transition-colors"
@@ -71,40 +38,28 @@ export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
             >
               See How It Works
             </a>
-          </motion.div>
+          </div>
         </div>
 
         {/* Right — Phone Mockup */}
-        <motion.div
-          custom={2}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="flex justify-center lg:justify-end"
-        >
+        <div className="flex justify-center lg:justify-end">
           <div className="relative">
             <PhoneMockup />
             {/* Floating cards */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-              className="absolute top-[20%] -right-5 lg:-right-12 bg-surface rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] px-4 py-3 flex items-center gap-3 text-xs font-medium"
+            <div
+              className="absolute top-[20%] -right-5 lg:-right-12 bg-surface rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] px-4 py-3 flex items-center gap-3 text-xs font-medium animate-[fadeInRight_0.6s_ease_1.2s_both]"
             >
               <span className="w-7 h-7 rounded-full bg-green-soft text-green flex items-center justify-center text-[10px]">✓</span>
               Appointment Booked
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.5, duration: 0.6 }}
-              className="absolute bottom-[25%] -left-8 lg:-left-14 bg-surface rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] px-4 py-3 flex items-center gap-3 text-xs font-medium"
+            </div>
+            <div
+              className="absolute bottom-[25%] -left-8 lg:-left-14 bg-surface rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] px-4 py-3 flex items-center gap-3 text-xs font-medium animate-[fadeInLeft_0.6s_ease_1.5s_both]"
             >
               <span className="w-7 h-7 rounded-full bg-accent-soft text-accent flex items-center justify-center text-[10px]">✉</span>
               Summary Sent
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

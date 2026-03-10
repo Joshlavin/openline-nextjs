@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const cards = [
   {
     icon: (
@@ -43,26 +41,11 @@ const cards = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] as const },
-  }),
-};
-
 export default function Problem() {
   return (
     <section className="py-24 lg:py-32 px-6">
       <div className="max-w-[var(--max)] mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-30px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2
             className="text-[clamp(1.8rem,3vw,2.6rem)] leading-tight text-text font-normal tracking-[-0.02em] mb-4"
             style={{ fontFamily: "var(--font-serif)" }}
@@ -72,17 +55,12 @@ export default function Problem() {
           <p className="text-text-2 text-lg max-w-lg mx-auto">
             Every unanswered call is a customer choosing someone else.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card, i) => (
-            <motion.div
+            <div
               key={i}
-              custom={i}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-30px" }}
               className="bg-surface rounded-2xl border border-border p-8 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-shadow"
             >
               <div className={`w-12 h-12 rounded-xl ${card.bg} ${card.color} flex items-center justify-center mb-6`}>
@@ -90,7 +68,7 @@ export default function Problem() {
               </div>
               <h3 className="text-[16px] font-semibold text-text mb-3">{card.title}</h3>
               <p className="text-sm text-text-2 leading-relaxed">{card.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
